@@ -1,102 +1,100 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
     box-sizing: border-box;
-}
-
-html, body {
+  }
+  
+  html,
+  body {
     height: 100%;
     display: flex;
+    text-align: center;
     justify-content: center;
-    align-items: flex-start; /* Align items at the top */
+    align-items: center; /* Center items vertically */
     flex-direction: column;
     background: radial-gradient(circle, rgb(59, 59, 219), rgb(108, 152, 209));
     color: white;
     font-family: Arial, sans-serif;
-    position: relative; /* Position context for z-index */
-}
-
-h1 {
-    margin-bottom: 20px;
-    z-index: 2; /* Ensure the heading is above the background */
-    position: relative; /* Necessary for z-index to work */
-}
-
-.content {
+    position: relative;
+    padding: 20px; /* Add padding to the body for full-page margins */
+  }
+  
+  h1 {
+    margin: 20px 0; /* Add vertical margin */
+    z-index: 2;
+    position: relative;
+  }
+  
+  .content {
     z-index: 2; /* Ensure text content is above the background */
     position: relative; /* Necessary for z-index to work */
-    padding-bottom: 100px; /* Add space below the text for better visibility */
-}
-
-.button-container {
+    padding-bottom: 20px; /* Add space below the text for better visibility */
+  }
+  
+  .button-container {
     margin-bottom: 20px; /* Space between the button and the content */
     z-index: 2; /* Ensure the button is above the background */
     position: relative; /* Necessary for z-index to work */
-}
-
-button {
+  }
+  
+  button {
     background-color: #ffffff;
     border: none;
     color: rgb(59, 59, 219);
     padding: 15px 32px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 7px;
     cursor: pointer;
-}
-
-.bomb-container {
-    position: absolute; /* Absolute to allow positioning over the text */
-    width: 100%; /* Ensure it takes the full width */
-    height: 100vh; /* Ensure it takes the full height of the viewport */
-    overflow: hidden; /* Hide anything that overflows */
-    z-index: 1; /* Ensure the bomb is below the heading and text */
-}
-
-.bomb {
-    width: 50px; /* Adjust size as necessary */
+  }
+  
+  .bomb-container {
     position: absolute;
-    top: -100px; /* Start above the viewport */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .bomb {
+    width: 50px;
+    position: absolute;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 1; /* Fully visible */
-}
-
-/* Class for falling bomb */
-.fall {
-    animation: fall 2s ease forwards; /* Trigger the fall animation */
-}
-
-/* Hide the bomb initially */
-.hidden {
-    display: none; 
-}
-
-/* Animation for the bomb */
-@keyframes fall {
+    opacity: 1;
+  }
+  
+  .fall {
+    animation: fall 3s ease forwards;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes fall {
     0% {
-        top: -100px; /* Starting position above the viewport */
-        opacity: 1; /* Fully visible */
+      top: -100px; /* Starting position above the viewport */
+      opacity: 1; /* Fully visible */
     }
     100% {
-        top: calc(100vh - 50px); /* Fall to just above the bottom of the viewport */
-        opacity: 0; /* Disappear */
+      top: calc(100vh - 50px); /* Fall to just above the bottom of the viewport */
+      opacity: 0; /* Disappear */
     }
-}
-
-/* Animation for text and button */
-@keyframes fallText {
+  }
+  
+  @keyframes fallText {
     0% {
-        opacity: 1; /* Start visible */
-        transform: translateY(0); /* Start position */
+      opacity: 1; /* Start visible */
+      transform: translateY(0); /* Start position */
     }
     100% {
-        opacity: 0; /* End invisible */
-        transform: translateY(200px); /* Adjust to fall further down before disappearing */
+      opacity: 0; /* End invisible */
+      transform: translateY(200px); /* Adjust to fall further down before disappearing */
     }
-}
-
-/* Apply falling animation to heading, content, and button */
-.fallText {
+  }
+  
+  .fallText {
     animation: fallText 1s ease forwards; /* Duration can be adjusted here */
-}
-
+  }
+  

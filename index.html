@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación de Bomba</title>
+    <title>Bomb Animation - Extra Exercise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="falling">💣 Animación de Bomba</h1>
+    <h1 class="falling">💣 CSS Animation </h1>
     
     <div class="content">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, laboriosam dolore quaerat sunt dolorum voluptatum porro laudantium hic fuga ipsa aliquid reiciendis dicta molestiae, modi accusamus unde facilis minus facere.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, laboriosam dolore quaerat sunt dolorum voluptatum porro laudantium hic fuga ipsa aliquid reiciendis dicta molestiae, modi accusamus unde facilis minus facere.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, laboriosam dolore quaerat sunt dolorum voluptatum porro laudantium hic fuga ipsa aliquid reiciendis dicta molestiae, modi accusamus unde facilis minus facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, laboriosam dolore quaerat sunt dolorum voluptatum porro laudantium hic fuga ipsa aliquid reiciendis dicta molestiae, modi accusamus unde facilis minus facere.
         </p>
     </div>
 
     <div class="button-container">
-        <button id="bomb_button">¡BOOM!</button>
+        <button id="bomb_button"><b>BOOM!</b></button>
     </div>
 
     <div class="bomb-container">
@@ -36,15 +33,14 @@
         const buttonContainer = document.querySelector('.button-container');
 
         button.addEventListener('click', () => {
-            bomb.classList.remove('hidden'); // Show the bomb
-            bomb.classList.add('fall'); // Start the bomb fall animation
+            bomb.classList.remove('hidden');
+            bomb.classList.add('fall');
             
-            // Trigger heading, content, and button fall animation after bomb
             setTimeout(() => {
                 heading.classList.add('fallText'); 
                 content.classList.add('fallText'); 
                 buttonContainer.classList.add('fallText'); 
-            }, 2000); // Adjust this delay to match the bomb's fall duration
+            }, 2000);
         });
     </script>
 </body>
